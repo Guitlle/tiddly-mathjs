@@ -10,3 +10,14 @@ title: Examples
 :Result is <$calc>{{!!test}} + 1</$calc>
 
 It's also possible to use the list widget inside the <$text text="""<$calc>""" /> widget to create sums of lists.
+
+;Operate fields and data tiddlers with math.js
+ 
+You can also set a field value with the widget $action-setfield-mathjs, which is a variation of the core widget $action-setfield. This means you can execute math operations with buttons, keyboard strokes, on checkbox change or any other widgets that execute actions.
+
+This button raises the field "test2" to the power of 2 each time it is clicked:
+
+<$button>
+<$action-setfield-mathjs $tiddler=<<currentTiddler>> $field="test2" $eval="test2^2" />
+Click to raise <b>{{!!test2}}</b> to the power of 2
+</$button>
