@@ -6,6 +6,8 @@ The <$text text="""<$calc>""" /> widget is a simple wrapper around [ext[math.js|
 
 In addition to just being able to evaluate standard expressions, I've added support for TextReferences among the code, so now you can store data in fields or data tiddlers and write expressions based on that data.
 
+An action widget to set fields values is included that. A copy of the tiddler fields or data dictionary is safely passed to math.js as the scope object which allows you to use the fields or indexes as variables in the math.js expressions. 
+
 To import this plugin drag this link: [[$:/plugins/mklauber/math.js]]
 
 Development on this plugin is managed at https://github.com/mklauber/tiddly-mathjs.  Feel free to open a issue or PR.
