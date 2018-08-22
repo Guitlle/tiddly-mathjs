@@ -9,3 +9,5 @@ To build:
 ```
 tiddlywiki ./editions/math.js/ --build
 ```
+
+You can install this by visiting the [demo](https://cdn.rawgit.com/Guitlle/tiddly-mathjs/build-changes/tmp.html) and dragging the plugin tiddler to your own tiddlywiki.
