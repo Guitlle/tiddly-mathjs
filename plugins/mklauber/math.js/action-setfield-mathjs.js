@@ -1,8 +1,10 @@
 /*\
-title: $:/guille/modules/widgets/action-setfield-eval.js
+title: $:/plugins/mklauber/math.js/action-setfield-mathjs.js
 type: application/javascript
 module-type: widget
 Action widget to set a single field or index on a tiddler.
+Author: @Guitlle 
+Date: 2018-08-21
 \*/
 (function(){
 
@@ -67,14 +69,16 @@ SetFieldWidgetEval.prototype.invokeAction = function(triggeringWidget,event) {
                 var scope = new Object(); 
                 Object.assign(scope, this.getTiddlerData());
                 try {
-                    var result = mathjs.eval(this.actionEval, scope);
-                    this.wiki.setText(this.actionTiddler,this.actionField,this.actionIndex,result,options);
+			var result = mathjs.eval(this.actionEval, scope);
+			this.wiki.setText(this.actionTiddler,this.actionField,this.actionIndex,result,options);
                 } catch (e) {
-                    console.log("Error in widget action-setfield-eval", this, e);
+			console.log("Error in widget action-setfield-eval", this, e);
                 }
+		/* We have duplicated the tiddler data, just make sure to delete the temporary scope */
+		delete scope;
         }
 	else if((typeof this.actionField == "string") || (typeof this.actionIndex == "string")  || (typeof this.actionValue == "string")) {
-		this.wiki.setText(this.actionTiddler,this.actionField,this.actionIndex,this.actionValue,options);
+			this.wiki.setText(this.actionTiddler,this.actionField,this.actionIndex,this.actionValue,options);
 	}
 	$tw.utils.each(this.attributes,function(attribute,name) {
 		if(name.charAt(0) !== "$") {
@@ -85,16 +89,16 @@ SetFieldWidgetEval.prototype.invokeAction = function(triggeringWidget,event) {
 };
 
 SetFieldWidgetEval.prototype.getTiddlerData = function() {
-        if(this.tiddler) {
-            if (this.actionIndex) {
-                var data = this.wiki.getTiddlerData(this.actionTiddler)
-                return data;
-            } else if (this.actionField) {
-                return this.tiddler.fields;
-            }
-        } else {
-                return undefined;            
-        }
+	if(this.tiddler) {
+		if (this.actionIndex) {
+			var data = this.wiki.getTiddlerData(this.actionTiddler)
+			return data;
+		} else if (this.actionField) {
+			return this.tiddler.fields;
+		}
+	} else {
+		return undefined;            
+	}
 };
 
 
