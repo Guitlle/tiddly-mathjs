@@ -74,9 +74,7 @@ SetFieldWidgetEval.prototype.invokeAction = function(triggeringWidget,event) {
                 } catch (e) {
 			console.log("Error in widget action-setfield-eval", this, e);
                 }
-		/* We have duplicated the tiddler data, just make sure to delete the temporary scope */
-		delete scope;
-        }
+		}
 	else if((typeof this.actionField == "string") || (typeof this.actionIndex == "string")  || (typeof this.actionValue == "string")) {
 			this.wiki.setText(this.actionTiddler,this.actionField,this.actionIndex,this.actionValue,options);
 	}

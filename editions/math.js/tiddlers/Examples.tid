@@ -1,6 +1,7 @@
 created: 20151115194846471
 modified: 20151115195948253
 test: 10
+test2: 2
 title: Examples
 
 ;<$text text="""Result is <$calc>1 + 1</$calc>""" />
