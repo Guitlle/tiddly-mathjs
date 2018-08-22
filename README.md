@@ -4,4 +4,8 @@
 
 Tiddly-mathjs is a tiddlywiki plugin for calculating mathematcal expressions.  
 
+To build: 
 
+```
+tiddlywiki ./editions/math.js/ --build
+```
