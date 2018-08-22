@@ -13,4 +13,4 @@ $ cd editions/math.js
 $ ../../node_modules/.bin/tiddlywiki --build
 ```
 
-You can install this by visiting the [demo](https://cdn.rawgit.com/Guitlle/tiddly-mathjs/build-changes/tmp.html) and dragging the plugin tiddler to your own tiddlywiki.
+You can install this in your tiddlywiki instance by visiting the [demo](https://cdn.rawgit.com/Guitlle/tiddly-mathjs/build/tmp.html) and dragging the plugin tiddler to your own tiddlywiki.
