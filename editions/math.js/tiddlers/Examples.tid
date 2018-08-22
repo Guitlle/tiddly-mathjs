@@ -21,3 +21,15 @@ This button raises the field "test2" to the power of 2 each time it is clicked:
 <$action-setfield-mathjs $tiddler=<<currentTiddler>> $field="test2" $eval="test2^2" />
 Click to raise <b>{{!!test2}}</b> to the power of 2
 </$button>
+
+You can also manipulate data tiddlers. In the following, the data tiddler [[ExampleData]] is updated with math operations:
+
+<$button>
+<$action-setfield-mathjs $tiddler="ExampleData" $index="y" $eval="y+1" />
+Click to increment y ( {{ExampleData##y}} )
+</$button>
+
+<$button>
+<$action-setfield-mathjs $tiddler="ExampleData" $index="x" $eval="x+1" />
+Click to increment x ( {{ExampleData##x}} )
+</$button>
